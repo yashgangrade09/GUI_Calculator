@@ -76,7 +76,7 @@ class calculator:
             self.exp.delete(0, END)
             self.exp.insert(0, self.answer)
     
-    def squareroot(self):
+    def square(self):
         self.evaluateExpression()
         try:
             self.answer = eval(self.expressionText)
@@ -87,6 +87,19 @@ class calculator:
             self.squareVal = math.pow(self.answer, 2)
             self.exp.delete(0, END)
             self.exp.insert(0, self.squareVal)
+    
+    def squareroot(self):
+        self.evaluateExpression()
+        try:
+            self.answer = eval(self.expressionText)
+        except SyntaxError or NameError or AttributeError:
+            self.exp.delete(0, END)
+            self.exp.insert(0, 'Enter Valid Input')
+        else:
+            self.squareRootVal = math.sqrt(self.answer)
+            self.exp.delete(0, END)
+            self.exp.insert(0, self.squareRootVal)
+
             
     def clearall(self):
         self.exp.delete(0, END)

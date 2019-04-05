@@ -63,18 +63,6 @@ class calculator:
         else:
             self.exp.delete(0, END)
             self.exp.insert(0, self.answer)
-    
-    def squareroot(self):
-        self.evaluateExpression()
-        try:
-            self.answer = eval(self.expressionText)
-        except SyntaxError or NameError or AttributeError:
-            self.exp.delete(0, END)
-            self.exp.insert(0, 'Enter Valid Input')
-        else:
-            self.squareVal = math.pow(self.answer, 2)
-            self.exp.delete(0, END)
-            self.exp.insert(0, self.squareVal)
             
     def clearall(self):
         self.exp.delete(0, END)
